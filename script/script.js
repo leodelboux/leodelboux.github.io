@@ -23,6 +23,20 @@ document.addEventListener('DOMContentLoaded', () => {
         contactModal.style.display = 'none';
     }
 
+    // --- Lógica do Modal SOBRE MIM (NOVO) ---
+    const aboutModal = document.getElementById('aboutModal');
+
+    window.openAboutModal = () => {
+        aboutModal.style.display = 'block';
+    }
+
+    window.closeAboutModal = () => {
+        aboutModal.style.display = 'none';
+    }
+
+
+    // --- Fechamento Global ---
+
     // Fechar Vídeo (Limpa o SRC para parar o som)
     window.closeVideoModal = () => {
         videoModal.style.display = 'none';
@@ -33,5 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.onclick = (e) => {
         if (e.target == videoModal) closeVideoModal();
         if (e.target == contactModal) closeContactModal();
+        if (e.target == aboutModal) closeAboutModal(); // Fecha o Sobre Mim também
     }
 });

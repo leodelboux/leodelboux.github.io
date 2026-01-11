@@ -1,8 +1,10 @@
-/* --- RESET & BASE --- */
+/* =========================================
+   1. RESET & CONFIGURAÇÕES GERAIS
+   ========================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html {
-    scroll-behavior: smooth; /* Rolagem suave (smooth scrolling) */
+    scroll-behavior: smooth; /* Rolagem suave */
 }
 
 body { 
@@ -11,13 +13,14 @@ body {
     font-family: 'Outfit', sans-serif; 
     overflow-x: hidden;
     line-height: 1.5;
-    -webkit-font-smoothing: antialiased; /* Fontes mais nítidas no Mac */
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Container padrão para centralizar */
 .container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
 
-/* --- HEADER --- */
+/* =========================================
+   2. CABEÇALHO (HEADER)
+   ========================================= */
 .main-header {
     padding: 30px 0;
     position: absolute;
@@ -35,9 +38,8 @@ body {
 }
 
 .btn-whatsapp {
-    text-decoration: none; /* Remove sublinhado de link */
-    display: inline-block; /* Comporta-se como botão */
-    /* Mantém o resto igual */
+    text-decoration: none;
+    display: inline-block;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255,255,255,0.2);
     color: #fff;
@@ -56,11 +58,13 @@ body {
     transform: scale(1.05);
 }
 
-/* --- HERO SECTION --- */
+/* =========================================
+   3. HERO SECTION (PRINCIPAL)
+   ========================================= */
 .hero { 
     padding: 180px 0 100px; 
     text-align: center; 
-    min-height: 85vh; /* Ocupa boa parte da tela */
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,9 +77,6 @@ body {
     margin-bottom: 30px; 
     box-shadow: 0 15px 40px rgba(138, 75, 175, 0.35);
     object-fit: cover;
-    
-    /* REMOVA AS LINHAS DE IMAGE-RENDERING E TRANSFORM */
-    /* Deixe limpo assim, o navegador vai suavizar sozinho */
 }
 
 h1 { 
@@ -97,6 +98,15 @@ h1 {
 
 .hero strong { color: #8a4baf; font-weight: 700; }
 
+/* Container dos Botões Hero */
+.cta-container {
+    display: flex;
+    gap: 15px; /* Espaço entre os botões */
+    justify-content: center;
+    flex-wrap: wrap; /* Para cair linha no celular */
+}
+
+/* Botão Principal (Roxo) */
 .btn-primary {
     background-color: #8a4baf;
     color: #fff;
@@ -116,7 +126,29 @@ h1 {
     box-shadow: 0 10px 30px rgba(138, 75, 175, 0.3);
 }
 
-/* --- TRABALHOS --- */
+/* Botão Secundário (Sobre Mim) */
+.btn-outline {
+    background-color: transparent;
+    color: #fff;
+    padding: 18px 45px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border: 2px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.btn-outline:hover {
+    border-color: #fff;
+    background-color: rgba(255,255,255,0.05);
+    transform: translateY(-4px);
+}
+
+/* =========================================
+   4. SEÇÃO DE TRABALHOS
+   ========================================= */
 .works { padding: 80px 0; }
 .section-title { 
     font-size: clamp(2rem, 5vw, 3rem); 
@@ -145,6 +177,14 @@ h1 {
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid #27272a;
     background: #000;
+}
+
+/* Correção para Vídeo Vertical */
+.work-preview.vertical-mode {
+    aspect-ratio: 9 / 16;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 12px;
 }
 
 .work-preview img { 
@@ -195,16 +235,18 @@ h1 {
     line-height: 1; 
 }
 
-/* --- DEPOIMENTOS (Caixa estilo Rystal) --- */
+/* =========================================
+   5. DEPOIMENTOS
+   ========================================= */
 .testimonials { padding: 50px 0 120px; }
+
 .testimonial-card {
-    /* Mantém o estilo base */
     background: linear-gradient(135deg, #7c3aed, #5b21b6);
     padding: 60px;
     border-radius: 30px;
     text-align: left;
     max-width: 900px;
-    margin: 0 auto 40px; /* Adicionado margem inferior para separar os cards */
+    margin: 0 auto 40px;
     box-shadow: 0 20px 60px rgba(124, 58, 237, 0.25);
     border: 1px solid rgba(255,255,255,0.1);
     transition: transform 0.3s;
@@ -245,7 +287,9 @@ h1 {
     opacity: 0.8;
 }
 
-/* --- FOOTER --- */
+/* =========================================
+   6. FOOTER & MODAIS GERAIS
+   ========================================= */
 .footer { 
     padding: 40px 0; 
     text-align: center; 
@@ -254,7 +298,7 @@ h1 {
     border-top: 1px solid #1a1a1a;
 }
 
-/* --- MODAIS --- */
+/* Fundo Preto dos Modais */
 .modal { 
     display: none; 
     position: fixed; 
@@ -267,6 +311,20 @@ h1 {
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
+/* Botão Fechar (X) */
+.close { 
+    position: absolute; 
+    top: 20px; right: 30px; 
+    font-size: 3rem; 
+    color: #fff; 
+    cursor: pointer; 
+    z-index: 1005; 
+    transition: color 0.2s;
+    line-height: 1;
+}
+.close:hover { color: #8a4baf; }
+
+/* Modal de Vídeo */
 .modal-content { 
     position: absolute; 
     top: 50%; left: 50%; 
@@ -277,19 +335,9 @@ h1 {
 }
 .modal-content iframe { width: 100%; height: 100%; border-radius: 12px; }
 
-.close { 
-    position: absolute; 
-    top: 20px; right: 30px; 
-    font-size: 3rem; 
-    color: #fff; 
-    cursor: pointer; 
-    z-index: 1001; 
-    transition: color 0.2s;
-    line-height: 1;
-}
-.close:hover { color: #8a4baf; }
-
-/* --- FORMULÁRIO (Ajustes de espaçamento aqui) --- */
+/* =========================================
+   7. MODAL DE FORMULÁRIO (CONTATO)
+   ========================================= */
 .modal-form {
     position: absolute; top: 50%; left: 50%; 
     transform: translate(-50%, -50%);
@@ -304,10 +352,9 @@ h1 {
 
 .modal-form h2 { font-size: 2rem; margin-bottom: 5px; color: #fff; }
 
-/* ESPAÇAMENTO CORRIGIDO */
 .form-subtitle { 
     color: #a1a1aa; 
-    margin-bottom: 30px; /* Mais espaço antes dos inputs */
+    margin-bottom: 30px; 
     font-size: 1rem;
 }
 
@@ -338,7 +385,6 @@ h1 {
     font-size: 0.9rem; 
     position: relative;
 }
-/* Linha decorativa no 'ou' */
 .divider::before, .divider::after {
     content: ""; position: absolute; top: 50%; width: 40%; height: 1px; background: #27272a;
 }
@@ -361,20 +407,104 @@ h1 {
     border-color: #25d366; 
 }
 
-/* --- RESPONSIVO --- */
+/* =========================================
+   8. NOVO MODAL: SOBRE MIM
+   ========================================= */
+.modal-about {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #121214;
+    padding: 60px 50px 50px; /* Topo maior para caber a marca */
+    border-radius: 24px;
+    width: 90%; max-width: 600px;
+    border: 1px solid #27272a;
+    text-align: left;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+/* Marca d'água no canto */
+.modal-watermark {
+    position: absolute;
+    top: 25px; left: 30px;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: #8a4baf;
+    letter-spacing: -1px;
+    opacity: 0.8;
+}
+
+.about-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.about-content p {
+    color: #a1a1aa;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.about-divider {
+    border: 0;
+    border-top: 1px solid #27272a;
+    margin: 30px 0;
+}
+
+.about-content h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Grade de Ícones */
+.software-grid {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Estilo placeholder para os ícones */
+.soft-item {
+    background: #0a0a0b;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+.soft-item:hover {
+    border-color: #8a4baf;
+    color: #8a4baf;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   9. RESPONSIVIDADE (MOBILE)
+   ========================================= */
 @media (max-width: 768px) {
     .work-item, .work-item.reverse { 
-        .testimonial-card {
-        padding: 40px 25px;
-        margin-bottom: 30px;
-    }
         flex-direction: column; 
         text-align: center; 
         gap: 25px; 
         margin-bottom: 100px;
     }
-    .work-item.reverse .work-stats { text-align: center; }
     
+    .work-item.reverse .work-stats { text-align: center; }
+
+    /* Correção do layout dos depoimentos no mobile */
+    .testimonial-card {
+        padding: 40px 25px;
+        margin-bottom: 30px;
+    }
+
     .hero { padding-top: 120px; min-height: auto; padding-bottom: 60px; }
     
     .testimonial-content { flex-direction: column; text-align: center; align-items: center; }

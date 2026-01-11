@@ -13,7 +13,8 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
-</head>
+    
+    </head>
 
 <body>
 
@@ -28,7 +29,7 @@
         <section class="hero">
             <div class="container hero-content">
                 <div class="profile-pic">
-                    <img src="assets/avatar.jpg" alt="Leonardo">
+                    <img src="assets/avatar-leo.png" alt="Leonardo">
                 </div>
 
                 <h1>hey, sou o leo!</h1>
@@ -36,6 +37,7 @@
 
                 <div class="cta-container">
                     <button class="btn btn-primary" onclick="openContactModal()">iniciar projeto</button>
+                    <button class="btn btn-outline" onclick="openAboutModal()">sobre mim</button>
                 </div>
             </div>
         </section>
@@ -130,15 +132,15 @@
             <p class="form-subtitle">Me conte sobre seu projeto.</p>
 
             <form action="https://formsubmit.co/delboux88@gmail.com" method="POST" target="_blank">
-                    <input type="hidden" name="_subject" value="Novo contato do Site!">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-    
-                    <input type="text" name="name" placeholder="Seu Nome" required>
-                    <input type="email" name="email" placeholder="Seu E-mail" required>
-                    <textarea name="message" rows="4" placeholder="Detalhes do vídeo..."></textarea>
-    
-                    <button type="submit" class="btn btn-primary full-width">Enviar</button>
+                <input type="hidden" name="_subject" value="Novo contato do Site!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <input type="text" name="name" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu E-mail" required>
+                <textarea name="message" rows="4" placeholder="Detalhes do vídeo..."></textarea>
+
+                <button type="submit" class="btn btn-primary full-width">Enviar</button>
             </form>
 
             <div class="divider">ou</div>
@@ -146,8 +148,30 @@
         </div>
     </div>
 
+    <div id="aboutModal" class="modal">
+        <span class="close" onclick="closeAboutModal()">&times;</span>
+        <div class="modal-about">
+            <div class="modal-watermark">delboux.</div>
+            
+            <div class="about-content">
+                <h2>quem é o leo?</h2>
+                <p>sou um editor apaixonado por criar narrativas visuais que prendem a atenção. com anos de experiência e uma edição fluída, transformo ideias brutas em conteúdos divertidos e dinâmicos.</p>
+                <p>meu foco não é apenas cortar vídeos, quero garantir retenção, ritmo e estilo único para cada projeto.</p>
+                
+                <hr class="about-divider">
+                
+                <h3>softwares que domino:</h3>
+                <div class="software-grid">
+                    <div class="soft-item">Premiere</div>
+                    <div class="soft-item">Capcut</div>
+                    <div class="soft-item">Photoshop</div>
+                    <div class="soft-item">DaVinci</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script/script.js"></script>
 </body>
-
 
 </html>
