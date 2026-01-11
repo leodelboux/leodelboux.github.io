@@ -1,0 +1,384 @@
+/* --- RESET & BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave (smooth scrolling) */
+}
+
+body { 
+    background-color: #0a0a0b; 
+    color: #fff; 
+    font-family: 'Outfit', sans-serif; 
+    overflow-x: hidden;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased; /* Fontes mais nítidas no Mac */
+}
+
+/* Container padrão para centralizar */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
+
+/* --- HEADER --- */
+.main-header {
+    padding: 30px 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+.header-flex { display: flex; justify-content: space-between; align-items: center; }
+
+.logo { 
+    font-weight: 900; 
+    font-size: 1.5rem; 
+    letter-spacing: -1px; 
+    cursor: default;
+}
+
+.btn-whatsapp {
+    text-decoration: none; /* Remove sublinhado de link */
+    display: inline-block; /* Comporta-se como botão */
+    /* Mantém o resto igual */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.btn-whatsapp:hover { 
+    background: #25d366; 
+    border-color: #25d366; 
+    color: #000; 
+    transform: scale(1.05);
+}
+
+/* --- HERO SECTION --- */
+.hero { 
+    padding: 180px 0 100px; 
+    text-align: center; 
+    min-height: 85vh; /* Ocupa boa parte da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-pic img { 
+    width: 120px; 
+    height: 120px; 
+    border-radius: 30px; 
+    margin-bottom: 30px; 
+    box-shadow: 0 15px 40px rgba(138, 75, 175, 0.35);
+    object-fit: cover;
+    
+    /* REMOVA AS LINHAS DE IMAGE-RENDERING E TRANSFORM */
+    /* Deixe limpo assim, o navegador vai suavizar sozinho */
+}
+
+h1 { 
+    font-size: clamp(3.5rem, 10vw, 7rem); 
+    font-weight: 900; 
+    letter-spacing: -3px; 
+    line-height: 0.95; 
+    margin-bottom: 25px;
+}
+
+.hero p { 
+    font-size: clamp(1.2rem, 3vw, 1.6rem); 
+    color: #a1a1aa; 
+    margin-bottom: 40px; 
+    max-width: 650px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.hero strong { color: #8a4baf; font-weight: 700; }
+
+.btn-primary {
+    background-color: #8a4baf;
+    color: #fff;
+    padding: 18px 45px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.btn-primary:hover {
+    background-color: #7b429d;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(138, 75, 175, 0.3);
+}
+
+/* --- TRABALHOS --- */
+.works { padding: 80px 0; }
+.section-title { 
+    font-size: clamp(2rem, 5vw, 3rem); 
+    font-weight: 700; 
+    margin-bottom: 80px; 
+    text-align: center; 
+    letter-spacing: -1px;
+}
+
+.work-item { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    margin-bottom: 140px; 
+    gap: 60px; 
+}
+.work-item.reverse { flex-direction: row-reverse; }
+
+.work-preview { 
+    flex: 1.3; 
+    aspect-ratio: 16/9; 
+    border-radius: 20px; 
+    overflow: hidden; 
+    position: relative; 
+    cursor: pointer; 
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #27272a;
+    background: #000;
+}
+
+.work-preview img { 
+    width: 100%; height: 100%; 
+    object-fit: cover; 
+    opacity: 0.85; 
+    transition: 0.4s; 
+}
+
+.play-overlay { 
+    position: absolute; 
+    inset: 0; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 4rem; 
+    color: #fff; 
+    opacity: 0; 
+    transition: 0.3s;
+    text-shadow: 0 0 30px rgba(138, 75, 175, 0.8);
+    transform: scale(0.8);
+}
+
+.work-preview:hover { 
+    transform: scale(1.02); 
+    border-color: #8a4baf; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+.work-preview:hover img { opacity: 0.3; }
+.work-preview:hover .play-overlay { opacity: 1; transform: scale(1); }
+
+.work-stats { flex: 0.7; text-align: left; }
+.work-item.reverse .work-stats { text-align: right; }
+
+.client-name { 
+    display: block; 
+    font-size: 1.3rem; 
+    color: #a1a1aa; 
+    font-weight: 500; 
+    margin-bottom: 10px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+.view-count { 
+    display: block; 
+    font-size: clamp(2.5rem, 5vw, 4rem); 
+    font-weight: 900; 
+    line-height: 1; 
+}
+
+/* --- DEPOIMENTOS (Caixa estilo Rystal) --- */
+.testimonials { padding: 50px 0 120px; }
+.testimonial-card {
+    /* Mantém o estilo base */
+    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    padding: 60px;
+    border-radius: 30px;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto 40px; /* Adicionado margem inferior para separar os cards */
+    box-shadow: 0 20px 60px rgba(124, 58, 237, 0.25);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s;
+}
+
+.variant-blue {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    box-shadow: 0 20px 60px rgba(37, 99, 235, 0.25);
+}
+
+.testimonial-card:hover { transform: translateY(-5px); }
+
+.testimonial-content { display: flex; align-items: flex-start; gap: 30px; }
+
+.user-avatar { 
+    width: 70px; height: 70px; 
+    border-radius: 50%; 
+    display: flex; align-items: center; justify-content: center; 
+    font-size: 2rem; 
+    flex-shrink: 0; 
+    background: rgba(0,0,0,0.2);
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.quote { 
+    font-size: clamp(1.4rem, 3vw, 2.2rem); 
+    font-weight: 800; 
+    line-height: 1.1; 
+    margin-bottom: 10px; 
+}
+.sub-quote { font-size: 1.1rem; opacity: 0.9; font-weight: 300; }
+.author { 
+    display: block; 
+    text-align: right; 
+    margin-top: 25px; 
+    font-weight: 700; 
+    font-size: 1.1rem; 
+    opacity: 0.8;
+}
+
+/* --- FOOTER --- */
+.footer { 
+    padding: 40px 0; 
+    text-align: center; 
+    color: #555; 
+    font-size: 0.9rem;
+    border-top: 1px solid #1a1a1a;
+}
+
+/* --- MODAIS --- */
+.modal { 
+    display: none; 
+    position: fixed; 
+    inset: 0; 
+    z-index: 1000; 
+    background: rgba(0,0,0,0.85); 
+    backdrop-filter: blur(8px); 
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-content { 
+    position: absolute; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 90%; max-width: 1000px; 
+    aspect-ratio: 16/9; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+.modal-content iframe { width: 100%; height: 100%; border-radius: 12px; }
+
+.close { 
+    position: absolute; 
+    top: 20px; right: 30px; 
+    font-size: 3rem; 
+    color: #fff; 
+    cursor: pointer; 
+    z-index: 1001; 
+    transition: color 0.2s;
+    line-height: 1;
+}
+.close:hover { color: #8a4baf; }
+
+/* --- FORMULÁRIO (Ajustes de espaçamento aqui) --- */
+.modal-form {
+    position: absolute; top: 50%; left: 50%; 
+    transform: translate(-50%, -50%);
+    background: #121214; 
+    padding: 50px; 
+    border-radius: 24px; 
+    width: 90%; max-width: 480px;
+    border: 1px solid #27272a; 
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.modal-form h2 { font-size: 2rem; margin-bottom: 5px; color: #fff; }
+
+/* ESPAÇAMENTO CORRIGIDO */
+.form-subtitle { 
+    color: #a1a1aa; 
+    margin-bottom: 30px; /* Mais espaço antes dos inputs */
+    font-size: 1rem;
+}
+
+.modal-form input, .modal-form textarea {
+    width: 100%; 
+    background: #09090b; 
+    border: 1px solid #27272a;
+    padding: 16px; 
+    margin-bottom: 12px; 
+    color: #fff; 
+    border-radius: 8px; 
+    font-family: inherit; 
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+.modal-form input:focus, .modal-form textarea:focus { 
+    border-color: #8a4baf; 
+    outline: none; 
+}
+
+.modal-form textarea { resize: vertical; min-height: 100px; }
+
+.full-width { width: 100%; margin-top: 10px; }
+
+.divider { 
+    margin: 25px 0; 
+    color: #555; 
+    font-size: 0.9rem; 
+    position: relative;
+}
+/* Linha decorativa no 'ou' */
+.divider::before, .divider::after {
+    content: ""; position: absolute; top: 50%; width: 40%; height: 1px; background: #27272a;
+}
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+.whatsapp-btn-modal { 
+    color: #25d366; 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 1.1rem; 
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+.whatsapp-btn-modal:hover { 
+    background: rgba(37, 211, 102, 0.1); 
+    border-color: #25d366; 
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .work-item, .work-item.reverse { 
+        .testimonial-card {
+        padding: 40px 25px;
+        margin-bottom: 30px;
+    }
+        flex-direction: column; 
+        text-align: center; 
+        gap: 25px; 
+        margin-bottom: 100px;
+    }
+    .work-item.reverse .work-stats { text-align: center; }
+    
+    .hero { padding-top: 120px; min-height: auto; padding-bottom: 60px; }
+    
+    .testimonial-content { flex-direction: column; text-align: center; align-items: center; }
+    .author { text-align: center; margin-top: 15px; }
+    
+    h1 { font-size: 3.5rem; }
+}
