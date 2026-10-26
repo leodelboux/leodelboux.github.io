@@ -27,7 +27,7 @@ CONTENT.videos = [
       en: 'A vertical showcase of my editing work, built with kinetic typography.'
     },
     contribution: { pt: 'Criação e edição', en: 'Concept and editing' },
-    src: 'https://youtube.com/shorts/QEWZAqnG0KI',
+    src: 'https://youtube.com/shorts/B_bQkMWCZjc',
     poster: 'assets/thumbs/reel-delboux-edit.jpg',
     orientation: 'vertical',
     credit: { pt: '', en: '' }
