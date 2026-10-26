@@ -1,178 +1,47 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
+<!doctype html>
+<html lang="pt-BR" data-root="./">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>delboux.projects — Crio, construo e vendo</title>
+  <meta name="description" content="Edição de vídeo para criadores e marcas, produtos digitais desenvolvidos com IA e venda direta. Criador do Santinho Virtual: faturamento de cinco dígitos em uma temporada eleitoral.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="alternate" hreflang="pt-BR" href="https://leodelboux.github.io/">
+  <link rel="alternate" hreflang="en" href="https://leodelboux.github.io/en/">
+  <link rel="alternate" hreflang="x-default" href="https://leodelboux.github.io/">
+  <!-- Ao publicar com domínio próprio, troque os hrefs acima e as URLs abaixo por endereços absolutos (https://seudominio/...). -->
 
-    <meta name="description" content="Portfólio de Leonardo Delboux - Editor de Vídeo.">
-    <meta name="author" content="Leonardo Delboux">
-    <meta name="theme-color" content="#0a0a0b">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="delboux.projects">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="delboux.projects">
+  <meta property="og:description" content="Crio, construo e vendo. Edição de vídeo, produtos digitais com IA e venda direta, com resultado comprovado.">
+  <meta property="og:image" content="https://leodelboux.github.io/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
-    <title>delboux.edit</title>
-
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
-    
-    </head>
-
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Inter:wght@400;500;600&display=swap">
+  <link rel="preload" as="image" href="assets/img/delboux-portrait.webp">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 <body>
+  <a class="skip" href="#main" data-ui="skip">Pular para o conteúdo</a>
+  <header class="site-header" id="top"></header>
+  <main id="main" tabindex="-1">
+    <noscript><p class="noscript">delboux.projects — Creative work. Digital solutions. Real execution. Ative o JavaScript para ver o portfólio completo.</p></noscript>
+  </main>
+  <footer class="site-footer"></footer>
 
-    <header class="main-header">
-        <div class="container header-flex">
-            <div class="logo">delboux.</div>
-            <a href="https://wa.me/5531971386367" target="_blank" class="btn-whatsapp">WhatsApp</a>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="container hero-content">
-                <div class="profile-pic">
-                    <img src="assets/avatar-leo.png" alt="Leonardo">
-                </div>
-
-                <h1>hey, sou o leo!</h1>
-                <p>Eu não edito, eu construo <strong>seu vídeo dos sonhos.</strong></p>
-
-                <div class="cta-container">
-                    <button class="btn btn-primary" onclick="openContactModal()">iniciar projeto</button>
-                    <button class="btn btn-outline" onclick="openAboutModal()">sobre mim</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="works">
-            <div class="container">
-                <h2 class="section-title">vídeos que editei:</h2>
-
-                <div class="work-item">
-                    <div class="work-preview vertical-mode" data-video="v-d4EJfh6gk">
-                        <img src="https://img.youtube.com/vi/v-d4EJfh6gk/maxresdefault.jpg" alt="Showreel Vertical">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="work-stats">
-                        <span class="client-name">Aline Castro</span>
-                        <span class="view-count">influencer & ativista</span>
-                    </div>
-                </div>
-
-                <div class="work-item reverse">
-                    <div class="work-preview" data-video="UP8tE6-5L24">
-                        <img src="https://img.youtube.com/vi/UP8tE6-5L24/maxresdefault.jpg" alt="Gameplay">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="work-stats">
-                        <span class="client-name">temet</span>
-                        <span class="view-count">840k+ views</span>
-                    </div>
-                </div>
-
-                <div class="work-item">
-                    <div class="work-preview" data-video="3Yk5qgFlKcI">
-                        <img src="https://img.youtube.com/vi/3Yk5qgFlKcI/maxresdefault.jpg" alt="Tutorial">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                    <div class="work-stats">
-                        <span class="client-name">temet</span>
-                        <span class="view-count">980k+ views</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="testimonials">
-            <div class="container">
-                <h2 class="section-title" style="margin-bottom: 40px; font-size: 2rem;">o que dizem:</h2>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="user-avatar" style="background-color: #8a4baf;">🔥</div>
-                        <div class="text-box">
-                            <p class="quote">everybody should hire him</p>
-                            <p class="sub-quote">this guy edits like a beast 🙏</p>
-                        </div>
-                    </div>
-                    <span class="author">- temet</span>
-                </div>
-
-                <div class="testimonial-card variant-blue">
-                    <div class="testimonial-content">
-                        <div class="user-avatar" style="background-color: #e67e22;">🐱</div>
-                        <div class="text-box">
-                            <p class="quote">sempre ouvindo e entregando exatamente o que eu imagino 🥰</p>
-                            <p class="sub-quote">ótimo com prazos</p>
-                        </div>
-                    </div>
-                    <span class="author">- Aline Castro</span>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 - Leonardo Delboux. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <div id="videoModal" class="modal">
-        <span class="close" onclick="closeVideoModal()">&times;</span>
-        <div class="modal-content">
-            <iframe id="modalFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <div id="contactModal" class="modal">
-        <span class="close" onclick="closeContactModal()">&times;</span>
-        <div class="modal-form">
-            <h2>Vamos conversar?</h2>
-            <p class="form-subtitle">Me conte sobre seu projeto.</p>
-
-            <form action="https://formsubmit.co/delboux88@gmail.com" method="POST" target="_blank">
-                <input type="hidden" name="_subject" value="Novo contato do Site!">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-
-                <input type="text" name="name" placeholder="Seu Nome" required>
-                <input type="email" name="email" placeholder="Seu E-mail" required>
-                <textarea name="message" rows="4" placeholder="Detalhes do vídeo..."></textarea>
-
-                <button type="submit" class="btn btn-primary full-width">Enviar</button>
-            </form>
-
-            <div class="divider">ou</div>
-            <a href="https://wa.me/5531971386367" target="_blank" class="whatsapp-btn-modal">Chamar no WhatsApp</a>
-        </div>
-    </div>
-
-    <div id="aboutModal" class="modal">
-        <span class="close" onclick="closeAboutModal()">&times;</span>
-        <div class="modal-about">
-            <div class="modal-watermark">delboux.</div>
-            
-            <div class="about-content">
-                <h2>quem é o leo?</h2>
-                <p>sou um editor apaixonado por criar narrativas visuais que prendem a atenção. com anos de experiência e uma edição fluída, transformo ideias brutas em conteúdos divertidos e dinâmicos.</p>
-                <p>meu foco não é apenas cortar vídeos, quero garantir retenção, ritmo e estilo único para cada projeto.</p>
-                
-                <hr class="about-divider">
-                
-                <h3>softwares que domino:</h3>
-                <div class="software-grid">
-                    <div class="soft-item">Premiere</div>
-                    <div class="soft-item">Capcut</div>
-                    <div class="soft-item">Photoshop</div>
-                    <div class="soft-item">DaVinci</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="script/script.js"></script>
+  <script src="content/ui.js"></script>
+  <script src="content/profile.js"></script>
+  <script src="content/projects.js"></script>
+  <script src="content/santinho.js"></script>
+  <script src="content/videos.js"></script>
+  <script src="content/experience.js"></script>
+  <script src="content/testimonials.js"></script>
+  <script src="js/app.js"></script>
 </body>
-
-
 </html>
